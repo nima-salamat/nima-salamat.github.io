@@ -2,10 +2,120 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Welcome</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nima Salamat | Resume</title>
+  <style>
+    /* Reset & Base */
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height:1.6; background:#f4f4f4; color:#333; padding:20px;}
+    a {color:#007acc; text-decoration:none;}
+    a:hover {text-decoration:underline;}
+
+    /* Container */
+    .container {max-width:900px; margin:0 auto; background:#fff; padding:30px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);}
+
+    /* Header */
+    .header {text-align:center; margin-bottom:30px;}
+    .header img {width:150px; height:150px; border-radius:50%; object-fit:cover; margin-bottom:15px;}
+    .header h1 {font-size:2.5rem; margin-bottom:5px;}
+    .header p {font-size:1.1rem; color:#666;}
+
+    /* Sections */
+    section {margin-bottom:25px;}
+    section h2 {font-size:1.5rem; border-bottom:2px solid #007acc; padding-bottom:5px; margin-bottom:15px; color:#007acc;}
+    .grid {display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:15px;}
+
+    /* List styling */
+    ul {list-style-type:none;}
+    li + li {margin-top:8px;}
+
+    /* Experience & Education Items */
+    .item {margin-bottom:15px;}
+    .item h3 {font-size:1.2rem; margin-bottom:3px;}
+    .item .period {font-size:0.9rem; color:#555; margin-bottom:5px;}
+    .item p {font-size:1rem; color:#444;}
+
+    /* Footer */
+    .footer {text-align:center; margin-top:30px; font-size:0.9rem; color:#777;}
+  </style>
 </head>
 <body>
-  <h1>Hello! I'm Nima :)</h1>
-  <p>This is my GitHub Pages site.</p>
+  <div class="container">
+    <header class="header">
+      <img src="data:image/png;base64,${b64}" alt="Nima Salamat">
+      <h1>Nima Salamat</h1>
+      <p>Software Engineer</p>
+      <p>Amol, Mazandaran, Iran &bull; <a href="tel:+989118574926">+98 911 857 4926</a> &bull; <a href="mailto:ssu87556@gmail.com">ssu87556@gmail.com</a></p>
+      <p><a href="https://github.com/nima-salamat" target="_blank">github.com/nima-salamat</a></p>
+    </header>
+
+    <section>
+      <h2>Skills</h2>
+      <ul class="grid">
+        <li>Django</li>
+        <li>Django Channels</li>
+        <li>Celery</li>
+        <li>Django REST Framework</li>
+        <li>PySide6 / PyQt</li>
+        <li>Docker</li>
+        <li>Python OpenCV</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Languages</h2>
+      <ul class="grid">
+        <li>Python</li>
+        <li>Rust</li>
+        <li>SQL</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Interests</h2>
+      <ul class="grid">
+        <li>Fortnite</li>
+        <li>Stronghold</li>
+        <li>CS</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      <div class="item">
+        <h3>ZrauxChat</h3>
+        <p class="period">Real-time Chat App &bull; <a href="https://github.com/nima-salamat/ZrauxChat" target="_blank">GitHub</a></p>
+        <p>Built with Django, Django REST Framework, WebSockets, Celery, and Redis. Features one-on-one chat, emoji support, and responsive design.</p>
+      </div>
+      <div class="item">
+        <h3>Transcriber</h3>
+        <p class="period">Desktop App &bull; <a href="https://github.com/nima-salamat/Transcriber" target="_blank">GitHub</a></p>
+        <p>Cross-platform tool to transcribe MP3 to text using Google Speech Recognition API, with audio playback, dark/light mode, and voice controls.</p>
+      </div>
+      <div class="item">
+        <h3>KeyboardSound</h3>
+        <p class="period">Desktop Program &bull; <a href="https://github.com/nima-salamat/KeyboardSound" target="_blank">GitHub</a></p>
+        <p>Custom keyboard sound effects using PyDub, Pygame, and PySide6.</p>
+      </div>
+      <div class="item">
+        <h3>SelfDrivingRobot</h3>
+        <p class="period">FiraCup Robotics Competition &bull; <a href="https://github.com/nima-salamat/SelfDrivingRobot" target="_blank">GitHub</a></p>
+        <p>Autonomous robot using computer vision and Arduino integration to detect light signals and navigate an environment.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="item">
+        <h3>Amol University of Special Modern Technologies</h3>
+        <p class="period">BSc Computer Engineering &bull; Sep 2023 – Present</p>
+        <p>Focusing on software development, algorithms, and system design, with practical experience in Python and Django.</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      &copy; 2025 Nima Salamat
+    </footer>
+  </div>
 </body>
 </html>
