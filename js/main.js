@@ -1,5 +1,5 @@
 const translations = {
-  en: {
+    en: {
     title_home: "Home | Nima Salamat",
     title_about: "About | Nima Salamat",
     title_contact: "Contact | Nima Salamat",
@@ -14,7 +14,7 @@ const translations = {
     loading_error: "Error loading projects.",
     retry: "Retry",
     about_heading: "About Me 📖",
-    about_casual: "Hello! I’m Nima. I’m a computer engineer currently studying at Amol University of Special Modern Technologies...",
+    about_casual: "Hello! I’m Nima. I’m a computer engineer currently studying at Amol University of Special Modern Technologies. I love building web apps with Django, real-time features with Channels, and desktop tools with PySide6.",
     skills_heading: "Skills",
     skill_django: "Django",
     skill_channels: "Django Channels",
@@ -38,6 +38,7 @@ const translations = {
     button_send: "Send 📤"
   },
 
+  
   fa: {
     title_home: "خانه | Nima Salamat",
     title_about: "درباره من | Nima Salamat",
@@ -47,13 +48,11 @@ const translations = {
     nav_contact: "✉️ تماس",
     job_title: "💻 مهندس کامپیوتر",
     welcome: "به وب‌سایت من خوش آمدید!",
-    intro_paragraph: "سلام! من نیما سلامات هستم...",
+    intro_paragraph: "سلام! من نیما سلامات هستم، یک مهندس کامپیوتر با علاقه به توسعه وب و اپلیکیشن‌های دسکتاپ. در ادامه پروژه‌هایم را می‌بینید.",
     my_projects: "پروژه‌های من",
     loading_projects: "در حال بارگذاری پروژه‌ها...",
-    loading_error: "خطا در بارگذاری پروژه‌ها.",
-    retry: "تلاش مجدد",
     about_heading: "درباره من 📖",
-    about_casual: "سلام! من نیما هستم، دانشجوی مهندسی کامپیوتر...",
+    about_casual: "سلام! من نیما هستم، دانشجوی مهندسی کامپیوتر دانشگاه تخصصی فناوری‌های نوین آمل. عاشق ساخت برنامه‌های وب با پایتون و جنگو هستم و همچنین ساخت برنامه‌های گرافیکی (GUI) با PySide6، Qt، OpenCV و کلی چیزهای جالب دیگه. تو وقت گذرونی برنامه می‌نویسم و همیشه دنبال یادگیری چیزهای جدید و حل مشکلات جالبم!",
     skills_heading: "مهارت‌ها",
     skill_django: "جنگو",
     skill_channels: "جنگو چنلز",
@@ -77,7 +76,6 @@ const translations = {
     button_send: "ارسال 📤"
   }
 };
-
 // Set default language and theme if not saved
 if (!localStorage.getItem('site-language')) {
   localStorage.setItem('site-language', 'en');
