@@ -44,10 +44,11 @@ const translations = {
     nav_contact: "✉️ تماس",
     job_title: "💻 مهندس کامپیوتر",
     welcome: "به وب‌سایت من خوش آمدید!",
-    intro_paragraph: "سلام! من نیما سلامات هستم، یک مهندس کامپیوتر با علاقه به توسعه وب و اپلیکیشن‌های دسکتاپ. در ادامه پروژه‌هایم را می‌بینید.",    my_projects: "پروژه‌های من",
+    intro_paragraph: "سلام! من نیما سلامات هستم، یک مهندس کامپیوتر با علاقه به توسعه وب و اپلیکیشن‌های دسکتاپ. در ادامه پروژه‌هایم را می‌بینید.",
+    my_projects: "پروژه‌های من",
     loading_projects: "در حال بارگذاری پروژه‌ها...",
     about_heading: "درباره من 📖",
-    about_casual: "سلام! من نیما هستم، دانشجوی مهندسی کامپیوتر دانشگاه تخصصی فناوری‌های نوین آمل. عاشق ساخت برنامه‌های وب با پایتون و جنگو هستم و همچنین ساخت برنامه‌های گرافیکی (GUI) با PySide6، Qt، OpenCV و کلی چیزهای جالب دیگه. تو وقت گذرونی برنامه می‌نویسم و همیشه دنبال یادگیری چیزهای جدید و حل مشکلات جالبم! ",
+    about_casual: "سلام! من نیما هستم، دانشجوی مهندسی کامپیوتر دانشگاه تخصصی فناوری‌های نوین آمل. عاشق ساخت برنامه‌های وب با پایتون و جنگو هستم و همچنین ساخت برنامه‌های گرافیکی (GUI) با PySide6، Qt، OpenCV و کلی چیزهای جالب دیگه. تو وقت گذرونی برنامه می‌نویسم و همیشه دنبال یادگیری چیزهای جدید و حل مشکلات جالبم!",
     skills_heading: "مهارت‌ها",
     skill_django: "جنگو",
     skill_channels: "جنگو چنلز",
@@ -74,17 +75,19 @@ const translations = {
 
 function applyTranslations(lang) {
   document.documentElement.lang = lang;
-  document.title = translations[lang][document.querySelector('title').getAttribute('data-i18n')];
+
+  const titleKey = document.querySelector('title').getAttribute('data-i18n');
+  if (translations[lang][titleKey]) {
+    document.title = translations[lang][titleKey];
+  }
+
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (translations[lang][key]) {
       el.innerText = translations[lang][key];
-      if (key === "about_casual") {
-        el.style.direction = lang === "fa" ? "rtl" : "ltr";
-        el.style.textAlign = lang === "fa" ? "right" : "left";
-      }
     }
   });
+
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
     const key = el.getAttribute('data-i18n-placeholder');
     if (translations[lang][key]) {
@@ -110,7 +113,9 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
 async function fetchAndRenderProjects() {
   const container = document.getElementById('projects-container');
   if (!container) return;
-  container.innerHTML = `<p>${translations[localStorage.getItem('site-language') || 'fa'].loading_projects}</p>`;
+  const lang = localStorage.getItem('site-language') || 'fa';
+  container.innerHTML = `<p class="fa-text">${translations[lang].loading_projects}</p>`;
+
   try {
     const reposRes = await fetch('https://api.github.com/users/nima-salamat/repos');
     if (!reposRes.ok) throw new Error('GitHub API error');
@@ -130,9 +135,10 @@ async function fetchAndRenderProjects() {
       return {
         name: repo.name,
         html_url: repo.html_url,
-        desc: description || translations[savedLang].loading_projects
+        desc: description || translations[lang].loading_projects
       };
     }));
+
     container.innerHTML = '';
     cards.forEach(card => {
       const cardEl = document.createElement('div');
@@ -146,10 +152,70 @@ async function fetchAndRenderProjects() {
     });
   } catch (err) {
     console.error(err);
-    container.innerHTML = `<p style="color:red;">خطا در بارگذاری پروژه‌ها.</p>`;
+    container.innerHTML = `
+      <p class="fa-text">${translations[lang].loading_error || "خطا در بارگذاری پروژه‌ها."}</p>
+      <button id="retry-btn">${translations[lang].retry || "تلاش مجدد"}</button>
+    `;
+    document.getElementById('retry-btn').addEventListener('click', () => {
+      fetchAndRenderProjects();
+    });
   }
 }
 
 if (window.location.pathname.includes('index.html') || window.location.pathname === '/') {
   fetchAndRenderProjects();
 }
+
+const menuToggle = document.querySelector('.menu-toggle');
+const sidebarEl = document.querySelector('.sidebar');
+
+menuToggle.addEventListener('click', () => {
+  const isOpen = sidebarEl.classList.contains('sidebar--open');
+  if (isOpen) {
+    sidebarEl.classList.remove('sidebar--open');
+    document.body.classList.remove('menu-open');
+  } else {
+    sidebarEl.classList.add('sidebar--open');
+    document.body.classList.add('menu-open');
+  }
+});
+
+sidebarEl.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth <= 768) {
+      sidebarEl.classList.remove('sidebar--open');
+      document.body.classList.remove('menu-open');
+    }
+  });
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth <= 768) {
+    sidebarEl.classList.remove('sidebar--open');
+    document.body.classList.remove('menu-open');
+  }
+});
+
+const themeToggleBtn = document.querySelector('.theme-toggle');
+const currentTheme = localStorage.getItem('site-theme') || 'light';
+if (currentTheme === 'dark') {
+  document.body.setAttribute('data-theme', 'dark');
+}
+
+themeToggleBtn.addEventListener('click', () => {
+  const isDark = document.body.getAttribute('data-theme') === 'dark';
+  if (isDark) {
+    document.body.removeAttribute('data-theme');
+    localStorage.setItem('site-theme', 'light');
+  } else {
+    document.body.setAttribute('data-theme', 'dark');
+    localStorage.setItem('site-theme', 'dark');
+  }
+});
+
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    const loaderEl = document.getElementById('loader');
+    if (loaderEl) loaderEl.style.display = 'none';
+  }, 500);
+});

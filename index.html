@@ -1,50 +1,65 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="oFPjCWc71rFz5PGr5-ChWFmrt26ZS0U5MP_Y4Lnr524" />
   <title data-i18n="title_home">خانه | Nima Salamat</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- سایدبار -->
-  <aside class="sidebar">
-    <!-- زبان -->
-    <div class="lang-switcher">
-      <button data-lang="fa" class="lang-btn">🇮🇷</button>
-      <button data-lang="en" class="lang-btn">🇬🇧</button>
-    </div>
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
 
-    <img src="assets/images/profile.jpg" alt="Profile Picture" class="sidebar__avatar">
+  <header class="top-nav">
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    <div class="top-nav__title" data-i18n="title_home"></div>
+  </header>
+
+  <aside class="sidebar">
+    <img src="assets/images/profile.jpg" alt="Profile Picture" class="sidebar__avatar" />
     <h2>Nima Salamat</h2>
-    <p data-i18n="job_title">💻 Computer Engineer</p>
+    <p data-i18n="job_title" class="fa-text">💻 Computer Engineer</p>
 
     <nav>
       <ul>
-        <li><a href="index.html" class="active" data-i18n="nav_home">🏠 خانه</a></li>
-        <li><a href="about.html" data-i18n="nav_about">ℹ️ درباره</a></li>
+        <li>
+          <a href="index.html" class="active fa-text" data-i18n="nav_home">🏠 خانه</a>
+        </li>
+        <li>
+          <a href="about.html" class="fa-text" data-i18n="nav_about">ℹ️ درباره</a>
+        </li>
       </ul>
     </nav>
 
     <a href="https://github.com/nima-salamat" target="_blank" class="github-link">🐱 GitHub</a>
+
+    <div class="sidebar__footer">
+      <div class="lang-switcher">
+        <button data-lang="fa" class="lang-btn">🇮🇷</button>
+        <button data-lang="en" class="lang-btn">🇬🇧</button>
+      </div>
+      <button class="theme-toggle" aria-label="Toggle theme">🌓</button>
+    </div>
   </aside>
 
-  <!-- محتوای اصلی -->
   <main class="content">
-    <h1 data-i18n="welcome">به وب‌سایت من خوش آمدید!</h1>
-    <p data-i18n="intro_paragraph">
-      سلام! من نیما سلامات هستم، یک مهندس کامپیوتر با علاقه‌مندی به توسعه وب و اپلیکیشن‌های دسکتاپ.
-      پروژه‌های من را در زیر می‌بینید.
+    <h1 data-i18n="welcome" class="fa-text">به وب‌سایت من خوش آمدید!</h1>
+    <p data-i18n="intro_paragraph" class="fa-text">
+      سلام! من نیما سلامات هستم، یک مهندس کامپیوتر با علاقه‌مندی به توسعه وب و اپلیکیشن‌های دسکتاپ. پروژه‌های من را در زیر می‌بینید.
     </p>
 
-    <!-- بخش پروژه‌ها -->
     <section class="projects-section">
-      <h2 data-i18n="my_projects">پروژه‌های من</h2>
+      <h2 data-i18n="my_projects" class="fa-text">پروژه‌های من</h2>
       <div id="projects-container" class="projects-grid">
-        <!-- کارت‌های پروژه‌ها با JS پر می‌شود -->
-        <p data-i18n="loading_projects">در حال بارگذاری پروژه‌ها...</p>
+        <p data-i18n="loading_projects" class="fa-text">در حال بارگذاری پروژه‌ها...</p>
       </div>
     </section>
+
+    <footer class="footer">
+      <p>© 2025</p>
+    </footer>
   </main>
 
   <script src="js/main.js"></script>

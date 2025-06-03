@@ -1,133 +1,145 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title data-i18n="title_about">درباره من | Nima Salamat</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- سایدبار -->
-  <aside class="sidebar">
-    <!-- زبان -->
-    <div class="lang-switcher">
-      <button data-lang="fa" class="lang-btn">🇮🇷</button>
-      <button data-lang="en" class="lang-btn">🇬🇧</button>
-    </div>
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
 
-    <img src="assets/images/profile.jpg" alt="Profile Picture" class="sidebar__avatar">
+  <header class="top-nav">
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    <div class="top-nav__title" data-i18n="title_about"></div>
+  </header>
+
+  <aside class="sidebar">
+    <img src="assets/images/profile.jpg" alt="Profile Picture" class="sidebar__avatar" />
     <h2>Nima Salamat</h2>
-    <p data-i18n="job_title">💻 Computer Engineer</p>
+    <p data-i18n="job_title" class="fa-text">💻 Computer Engineer</p>
 
     <nav>
       <ul>
-        <li><a href="index.html" data-i18n="nav_home">🏠 خانه</a></li>
-        <li><a href="about.html" class="active" data-i18n="nav_about">ℹ️ درباره</a></li>
+        <li>
+          <a href="index.html" class="fa-text" data-i18n="nav_home">🏠 خانه</a>
+        </li>
+        <li>
+          <a href="about.html" class="active fa-text" data-i18n="nav_about">ℹ️ درباره</a>
+        </li>
       </ul>
     </nav>
 
     <a href="https://github.com/nima-salamat" target="_blank" class="github-link">🐱 GitHub</a>
+
+    <div class="sidebar__footer">
+      <div class="lang-switcher">
+        <button data-lang="fa" class="lang-btn">🇮🇷</button>
+        <button data-lang="en" class="lang-btn">🇬🇧</button>
+      </div>
+      <button class="theme-toggle" aria-label="Toggle theme">🌓</button>
+    </div>
   </aside>
 
-  <!-- محتوای اصلی -->
   <main class="content">
-    <h1 data-i18n="about_heading">درباره من 📖</h1>
+    <h1 data-i18n="about_heading" class="fa-text">درباره من 📖</h1>
     <div class="about-text">
-      <p data-i18n="about_casual" style="font-size:16px; line-height:1.5;">
-        Hello! I’m Nima, a passionate computer engineer studying at Amol University of Special Modern Technologies (AUSMT).  
-        I enjoy creating web applications using Python and Django, building real-time features with Django Channels,  
-        and developing desktop software with PySide6. Always excited to learn new tech and solve interesting problems!
+      <p data-i18n="about_casual" class="fa-text" style="font-size:16px; line-height:1.5;">
+        سلام! من نیما هستم، دانشجوی مهندسی کامپیوتر دانشگاه تخصصی فناوری‌های نوین آمل.  
+        عاشق ساخت برنامه‌های وب با پایتون و جنگو هستم و همچنین ساخت برنامه‌های گرافیکی (GUI) با PySide6، Qt، OpenCV  
+        و کلی چیزهای جالب دیگه. تو وقت گذرونی برنامه می‌نویسم و همیشه دنبال یادگیری چیزهای جدید و حل مشکلات جالبم!
       </p>
-    
-
     </div>
 
-
-    <!-- بخش مهارت‌ها با امتیاز -->
     <section class="skills-section">
-  <h2 data-i18n="skills_heading">مهارت‌ها / Skills</h2>
+      <h2 data-i18n="skills_heading" class="fa-text">مهارت‌ها / Skills</h2>
 
-  <div class="skill-item">
-    <span data-i18n="skill_python">Python</span>
-    <div class="progress-bar">
-      <div class="progress" style="width: 100%;"></div>
-    </div>
-    <span class="progress-label">100%</span>
-  </div>
+      <div class="skill-item">
+        <span data-i18n="skill_python" class="fa-text">Python</span>
+        <div class="progress-bar">
+          <div class="progress" style="width: 100%;"></div>
+        </div>
+        <span class="progress-label">100%</span>
+      </div>
 
-  <div class="skill-item">
-    <span data-i18n="skill_django">Django</span>
-    <div class="progress-bar">
-      <div class="progress" style="width: 90%;"></div>
-    </div>
-    <span class="progress-label">90%</span>
-  </div>
-  <div class="skill-item">
-    <span data-i18n="skill_restframework">Django REST framework</span>
-    <div class="progress-bar">
-      <div class="progress" style="width: 90%;"></div>
-    </div>
-    <span class="progress-label">90%</span>
-  </div>
+      <div class="skill-item">
+        <span data-i18n="skill_django" class="fa-text">جنگو</span>
+        <div class="progress-bar">
+          <div class="progress" style="width: 90%;"></div>
+        </div>
+        <span class="progress-label">90%</span>
+      </div>
 
-  <div class="skill-item">
-    <span data-i18n="skill_channels">Django Channels</span>
-    <div class="progress-bar">
-      <div class="progress" style="width: 85%;"></div>
-    </div>
-    <span class="progress-label">85%</span>
-  </div>
+      <div class="skill-item">
+        <span data-i18n="skill_restframework" class="fa-text">Django REST framework</span>
+        <div class="progress-bar">
+          <div class="progress" style="width: 90%;"></div>
+        </div>
+        <span class="progress-label">90%</span>
+      </div>
 
+      <div class="skill-item">
+        <span data-i18n="skill_channels" class="fa-text">جنگو چنلز</span>
+        <div class="progress-bar">
+          <div class="progress" style="width: 85%;"></div>
+        </div>
+        <span class="progress-label">85%</span>
+      </div>
 
-  <div class="skill-item">
-    <span data-i18n="skill_celery">Celery</span>
-    <div class="progress-bar">
-      <div class="progress" style="width: 80%;"></div>
-    </div>
-    <span class="progress-label">80%</span>
-  </div>
+      <div class="skill-item">
+        <span data-i18n="skill_celery" class="fa-text">سلری</span>
+        <div class="progress-bar">
+          <div class="progress" style="width: 80%;"></div>
+        </div>
+        <span class="progress-label">80%</span>
+      </div>
 
-  <div class="skill-item">
-    <span data-i18n="skill_pyside6">PySide6 / PyQt</span>
-    <div class="progress-bar">
-      <div class="progress" style="width: 75%;"></div>
-    </div>
-    <span class="progress-label">75%</span>
-  </div>
+      <div class="skill-item">
+        <span data-i18n="skill_pyside6" class="fa-text">PySide6 / PyQt</span>
+        <div class="progress-bar">
+          <div class="progress" style="width: 75%;"></div>
+        </div>
+        <span class="progress-label">75%</span>
+      </div>
 
-  <div class="skill-item">
-    <span data-i18n="skill_sql">SQL</span>
-    <div class="progress-bar">
-      <div class="progress" style="width: 70%;"></div>
-    </div>
-    <span class="progress-label">70%</span>
-  </div>
+      <div class="skill-item">
+        <span data-i18n="skill_sql" class="fa-text">SQL</span>
+        <div class="progress-bar">
+          <div class="progress" style="width: 70%;"></div>
+        </div>
+        <span class="progress-label">70%</span>
+      </div>
 
-  <div class="skill-item">
-    <span data-i18n="skill_docker">Docker</span>
-    <div class="progress-bar">
-      <div class="progress" style="width: 70%;"></div>
-    </div>
-    <span class="progress-label">70%</span>
-  </div>
+      <div class="skill-item">
+        <span data-i18n="skill_docker" class="fa-text">داکر</span>
+        <div class="progress-bar">
+          <div class="progress" style="width: 70%;"></div>
+        </div>
+        <span class="progress-label">70%</span>
+      </div>
 
-  <div class="skill-item">
-    <span data-i18n="skill_opencv">OpenCV</span>
-    <div class="progress-bar">
-      <div class="progress" style="width: 70%;"></div>
-    </div>
-    <span class="progress-label">70%</span>
-  </div>
+      <div class="skill-item">
+        <span data-i18n="skill_opencv" class="fa-text">پایتون OpenCV</span>
+        <div class="progress-bar">
+          <div class="progress" style="width: 70%;"></div>
+        </div>
+        <span class="progress-label">70%</span>
+      </div>
 
-  <div class="skill-item">
-    <span data-i18n="skill_rust">Rust</span>
-    <div class="progress-bar">
-      <div class="progress" style="width: 60%;"></div>
-    </div>
-    <span class="progress-label">60%</span>
-  </div>
-</section>
+      <div class="skill-item">
+        <span data-i18n="skill_rust" class="fa-text">راست (Rust)</span>
+        <div class="progress-bar">
+          <div class="progress" style="width: 60%;"></div>
+        </div>
+        <span class="progress-label">60%</span>
+      </div>
+    </section>
 
+    <footer class="footer">
+      <p>© 2025</p>
+    </footer>
   </main>
 
   <script src="js/main.js"></script>
