@@ -1,5 +1,5 @@
 const translations = {
-  en: {
+    en: {
     title_home: "Home | Nima Salamat",
     title_about: "About | Nima Salamat",
     title_contact: "Contact | Nima Salamat",
@@ -11,6 +11,8 @@ const translations = {
     intro_paragraph: "Hi! I’m Nima Salamat, a computer engineer passionate about web and desktop development. Here are my projects.",
     my_projects: "My Projects",
     loading_projects: "Loading projects...",
+    loading_error: "Error loading projects.",
+    retry: "Retry",
     about_heading: "About Me 📖",
     about_casual: "Hello! I’m Nima. I’m a computer engineer currently studying at Amol University of Special Modern Technologies. I love building web apps with Django, real-time features with Channels, and desktop tools with PySide6.",
     skills_heading: "Skills",
@@ -35,6 +37,8 @@ const translations = {
     placeholder_message: "Type your message here...",
     button_send: "Send 📤"
   },
+
+  
   fa: {
     title_home: "خانه | Nima Salamat",
     title_about: "درباره من | Nima Salamat",
